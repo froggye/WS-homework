@@ -69,6 +69,10 @@ namespace Back_Propagation
         private LeastSq mnk = new LeastSq();
         private Propagation prop = new Propagation();        
 
+
+
+        // ===== BUTTON CLICK EVENTS =============================
+
         private void BrowseFile_Click(object sender, EventArgs e)
         {
             // Открыть диалоговое окно для выбора файла
@@ -79,68 +83,19 @@ namespace Back_Propagation
             {
                 try
                 {
-                    // Сбросить все что можно
-                    
-                    input.Clear();
-                    mnk.Clear();
-                    prop.Clear();
+                    ClearAll();
 
-                    k_textbox.Clear();
-                    b_textbox.Clear();
-                    w1_textbox.Clear();
-                    w2_textbox.Clear();
+                    ReadFile(ofd);
 
-                    chart.Series[0].Points.Clear();
-                    chart.Series[1].Points.Clear();
-                    chart.Series[2].Points.Clear();
-
-                    // Открыть файл и считать два вектора
-
-                    StreamReader sr = new StreamReader(ofd.FileName);
-                    string line = sr.ReadLine();
-
-                    input.Size = Convert.ToInt32(line);
-
-                    bool t = true;
-
-                    for (int i = 0; i < input.Size; i++)
-                    {
-                        line = sr.ReadLine();
-                        foreach (var number in line.Split())
-                        {
-                            if (t)
-                            {
-                                input.X.Add(Convert.ToDouble(number));
-                                t = false;
-                            }
-                            else
-                            {
-                                input.D.Add(Convert.ToDouble(number));
-                                t = true;
-                            }
-                        }
-                    }
-
-                    // Вывод исходных значений - в виде текста и графика
-
-                    StringBuilder sb = new StringBuilder();
-                    for (int i = 0; i < input.Size; i++)
-                    {
-                        sb.Append(input.X[i].ToString("F2").PadLeft(7));
-                        sb.Append(input.D[i].ToString("F2").PadLeft(10));
-                        sb.AppendLine();
-                    }
-                    richTextBox1.Text = sb.ToString();
-
-                    for (int i = 0; i < input.Size; i++)
-                        chart.Series[2].Points.AddXY(input.X[i], input.D[i]);
+                    ShowOnScreen();
 
                     MNK_button.Enabled = true;
                     NN_button.Enabled = true;
                 }
                 catch
                 {
-                    MessageBox.Show("Can't open file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Can't open file", "Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -154,7 +109,7 @@ namespace Back_Propagation
             k_textbox.Text = mnk.K.ToString();
             b_textbox.Text = mnk.B.ToString();
 
-            graphic();
+            ResetGraphic();
         }
 
         private void NN_button_Click(object sender, EventArgs e)
@@ -166,12 +121,82 @@ namespace Back_Propagation
             w1_textbox.Text = prop.K.ToString();
             w2_textbox.Text = prop.B.ToString();
 
-            graphic();
+            ResetGraphic();
+        }
+
+
+
+
+        // ========= UTILS =============================================
+
+        private void ClearAll()
+        {
+            // Сбросить все что можно
+
+            input.Clear();
+            mnk.Clear();
+            prop.Clear();
+
+            k_textbox.Clear();
+            b_textbox.Clear();
+            w1_textbox.Clear();
+            w2_textbox.Clear();
+
+            chart.Series[0].Points.Clear();
+            chart.Series[1].Points.Clear();
+            chart.Series[2].Points.Clear();
+        }
+
+        private void ReadFile(OpenFileDialog openFileDialog)
+        {
+            // Открыть файл и считать два вектора
+
+            StreamReader sr = new StreamReader(openFileDialog.FileName);
+            string line = sr.ReadLine();
+
+            input.Size = Convert.ToInt32(line);
+
+            bool t = true;
+
+            for (int i = 0; i < input.Size; i++)
+            {
+                line = sr.ReadLine();
+                foreach (var number in line.Split())
+                {
+                    if (t)
+                    {
+                        input.X.Add(Convert.ToDouble(number));
+                        t = false;
+                    }
+                    else
+                    {
+                        input.D.Add(Convert.ToDouble(number));
+                        t = true;
+                    }
+                }
+            }
+        }
+
+        private void ShowOnScreen()
+        {
+            // Вывод исходных значений - в виде текста и графика
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < input.Size; i++)
+            {
+                sb.Append(input.X[i].ToString("F2").PadLeft(7));
+                sb.Append(input.D[i].ToString("F2").PadLeft(10));
+                sb.AppendLine();
+            }
+            richTextBox1.Text = sb.ToString();
+
+            for (int i = 0; i < input.Size; i++)
+                chart.Series[2].Points.AddXY(input.X[i], input.D[i]);
         }
 
 
         // Чтобы обновить график, его нужно заново перерисовать
-        void graphic()
+        private void ResetGraphic()
         {
             double a0 = input.X[0], a1 = input.X[input.Size - 1];
             double h = input.X[1] - input.X[0];
