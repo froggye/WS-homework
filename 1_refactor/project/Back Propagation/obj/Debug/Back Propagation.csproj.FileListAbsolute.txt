@@ -1,0 +1,22 @@
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\bin\Debug\Back Propagation.exe.config
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\bin\Debug\Back Propagation.exe
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\bin\Debug\Back Propagation.pdb
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back Propagation.csproj.AssemblyReference.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back Propagation.csproj.SuggestedBindingRedirects.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back_Propagation.Form1.resources
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back_Propagation.Properties.Resources.resources
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back Propagation.csproj.GenerateResource.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back Propagation.csproj.CoreCompileInputs.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back Propagation.exe
+C:\Users\Masha\source\repos\Нейросети\Back Propagation\Back Propagation\obj\Debug\Back Propagation.pdb
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\bin\Debug\Back Propagation.exe.config
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\bin\Debug\Back Propagation.exe
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\bin\Debug\Back Propagation.pdb
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back Propagation.csproj.AssemblyReference.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back Propagation.csproj.SuggestedBindingRedirects.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back_Propagation.Form1.resources
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back_Propagation.Properties.Resources.resources
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back Propagation.csproj.GenerateResource.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back Propagation.csproj.CoreCompileInputs.cache
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back Propagation.exe
+C:\Users\Masha\source\repos\Нейросети\Back Propagation — refactor\Back Propagation\obj\Debug\Back Propagation.pdb
