@@ -50,5 +50,5 @@
             <version>2.9.6</version>
         </dependency>
     </dependencies>
-    
+    <name>2_testing</name>
 </project>
