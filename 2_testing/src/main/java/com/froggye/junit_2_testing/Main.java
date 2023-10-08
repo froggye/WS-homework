@@ -1,4 +1,5 @@
-package com.froggye.ws_23_assignment;
+
+package com.froggye.junit_2_testing;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +9,8 @@ import java.util.stream.Collectors;
 
 
 public class Main {
+    private static final String DATA_URL = 
+                "https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/data.json";
     
     public static void main(String[] args) throws IOException {
                 
@@ -16,7 +19,7 @@ public class Main {
         
         // === получить data.json ===
          
-        ArrayList<String> data = parser.readURL("https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/data.json",
+        ArrayList<String> data = parser.readURL(DATA_URL,
                 String.class);
         if (data == null) 
         {
@@ -27,7 +30,8 @@ public class Main {
         
         // === прочитать replacement.json ===
 
-        ArrayList<Replacement> replacement = parser.readLocal("replacement.json", Replacement.class);
+        ArrayList<Replacement> replacement = parser.readLocal("replacement.json", 
+                Replacement.class);
         if (replacement == null) 
         {
             System.out.println("Ошибка чтения файла");
@@ -43,6 +47,7 @@ public class Main {
         // === записать результат в result.json ===
         
         if (!parser.writeFile(data)){
+            System.out.println("Ошибка записи файла");
             System.exit(1);
         }
         

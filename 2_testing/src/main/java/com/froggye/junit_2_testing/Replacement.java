@@ -1,5 +1,4 @@
-
-package com.froggye.ws_23_assignment;
+package com.froggye.junit_2_testing;
 
 import java.util.Objects;
 
@@ -65,3 +64,4 @@ public class Replacement {
                 '}';
     }
 }
+
