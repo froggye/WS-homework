@@ -1,0 +1,333 @@
+Опции curl:
+https://curl.se/docs/manpage.html#--abstract-unix-socket
+curl --manual
+curl -M
+curl --help <all>/<category>
+curl -h <all>/<category>
+
+
+Получить файл и вывести содержимое в поток вывода:
+curl https://example.com
+curl --url https://example.com
+curl -L https://example.com - redirect(3xx responce)
+
+Сохранить файл:
+curl -O https://example.com
+curl --remote-name https://example.com
+curl -o file.txt https://example.com
+curl --output file.txt https://example.com
+cat file.txt
+curl --output-dir "tmp" -O https://example.com
+
+Вывести request и responce headers:
+curl -v google.com 
+curl --verbose https://example.com
+Вывести только responce header:
+curl -I google.com  
+Добавить responce header в вывод
+curl -i https://example.com
+curl --include https://example.com
+
+Записать responce header в файл
+curl --dump-header store.txt https://example.com
+curl -D store.txt https://example.com
+curl -sS -D - https://example.com -o nul
+
+Отправить json в POST request на HTTP сервер
+curl --json '{ "drink": "coffe" }' https://example.com
+curl --json @filename https://example.com
+
+Отправить data в POST request на HTTP сервер
+curl -d "name=curl" https://example.com
+curl --data @filename https://example.com
+curl -d '{ "name": "Darth" }' http://example.com
+
+Загрузить файл по url
+curl -T "img[1-1000].png" ftp://ftp.example.com/
+curl --upload-file file ftp://ftp.example.com/
+
+Сохранить подробную информацию
+curl --trace-ascii log.txt https://example.com
+curl --trace log.txt https://example.com
+
+
+
+-s           # --silent: don't show progress meter or errors
+-S           # --show-error: when used with --silent (-sS), show errors but no progress meter
+
+
+==========================================================
+
+Получить README - выведен в консоль
+$ curl https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/README.md
+
+Скачать
+$ curl -O https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/README.md
+
+Сохранить responce header в файл
+$ curl -D responce.txt https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/README.md
+
+Вывести оба заголовка
+$ curl -v https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/README.md
+*   Trying 185.199.110.133:443...
+* Connected to raw.githubusercontent.com (185.199.110.133) port 443 (#0)
+...
+> GET /thewhitesoft/student-2023-assignment/main/README.md HTTP/2
+> Host: raw.githubusercontent.com
+> user-agent: curl/7.75.0
+> accept: */*
+>
+...
+< HTTP/2 200
+< cache-control: max-age=300
+< content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+< content-type: text/plain; charset=utf-8
+...
+
+Подробный вывод - не особо понятный
+$ curl --trace log https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/README.md
+$ curl --trace-ascii log-ascii https://raw.githubusercontent.com/thewhitesoft/student-2023-assignment/main/README.md
+
+Отправить файл
+$ curl -X POST -d @send_data.json "https://httpbin.org/post" --header "Content-Type:application/json" -v
+> POST /post HTTP/2
+> Host: httpbin.org
+> user-agent: curl/7.75.0
+> accept: */*
+> content-type:application/json
+> content-length: 49
+>
+* Connection state changed (MAX_CONCURRENT_STREAMS == 128)!
+* We are completely uploaded and fine
+< HTTP/2 200
+< date: Mon, 09 Oct 2023 06:08:48 GMT
+< content-type: application/json
+< content-length: 505
+< server: gunicorn/19.9.0
+< access-control-allow-origin: *
+< access-control-allow-credentials: true
+<
+{
+  "args": {},
+  "data": "{\t\"file\": \"send_data\", \t\"fullName\": \"Mary Smith\"}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "*/*",
+    "Content-Length": "49",
+    "Content-Type": "application/json",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/7.75.0",
+    "X-Amzn-Trace-Id": "Root=1-65239823-1323f4335ea7ea6c5970a25c"
+  },
+  "json": {
+    "file": "send_data",
+    "fullName": "Mary Smith"
+  },
+  "origin": "188.162.228.24",
+  "url": "https://httpbin.org/post"
+}
+
+* https://www.postman.com/blue-shadow-202662/workspace/postman-examples/documentation/11803921-a19ebb71-4616-4f56-8225-945b9cf791e3
+Отправить запрос с параметрами в url
+$ curl https://petstore3.swagger.io/api/v3/pet/findByStatus?status=available
+[
+    {
+        "id":2,
+        "category": {
+            "id":2,
+            "name":"Cats"
+        },
+        "name":"Cat 2", 
+        "photoUrls": [
+            "url1",
+            "url2"
+        ],
+        "tags": [
+            {
+                "id":1,
+                "name":"tag2"
+            },
+            {
+                "id":2,
+                "name":"tag3"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":4,
+        "category": {
+            "id":1,
+            "name":"Dogs"
+        },
+        "name":"Dog 1",
+        "photoUrls": [
+            "url1",
+            "url2"
+        ],
+        "tags": [
+            {
+                "id":1,
+                "name":"tag1"
+            },
+            {
+                "id":2,
+                "name":"tag2"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":7,
+        "category": {
+            "id":4,
+            "name":"Lions"
+        },
+        "name":"Lion 1",
+        "photoUrls": [
+            "url1",
+            "url2"
+        ],
+        "tags": [
+            {
+                "id":1,
+                "name":"tag1"
+            },
+            {
+                "id":2,
+                "name":"tag2"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":9,
+        "category": {
+            "id":4,
+            "name":"Lions"
+        },
+        "name":"Lion 3",
+        "photoUrls": [
+            "url1",
+            "url2"
+        ],
+        "tags": [
+            {
+                "id":1,
+                "name":"tag3"
+            },
+            {
+                "id":2,
+                "name":"tag4"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":101,
+        "name":"pepa",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id":0,
+                "name":"string"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":102,
+        "name":"pepa 2",
+        "photoUrls": [],
+        "tags": [],
+        "status":"available"
+    },
+    {
+        "id":8,
+        "category": {
+            "id":1,
+            "name":"Birds"
+        },
+        "name":"tweetie",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id":2,
+                "name":"string"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":12,
+        "category": {
+            "id":1,
+            "name":"Fish"
+        },
+        "name":"Blue",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [ 
+            {
+                "id":5,
+                "name":"string"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":31,
+        "category": {
+            "id":1,
+            "name":"Fly"
+        },
+        "name":"Bat",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id":0,
+                "name":"string"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":23,
+        "category": {
+            "id":1,
+            "name":"Fly"
+        },
+        "name":"Bat",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id":0,
+                "name":"string"
+            }
+        ],
+        "status":"available"
+    },
+    {
+        "id":359,
+        "category": {
+            "id":1,
+            "name":"Dogs"
+        },
+        "name":"Jody",
+        "photoUrls": [],
+        "tags": [],
+        "status":"available"
+    }
+]
+
+

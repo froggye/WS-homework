@@ -1,0 +1,291 @@
+== Info:   Trying 185.199.109.133:443...
+== Info: Connected to raw.githubusercontent.com (185.199.109.133) port 443 (#0)
+== Info: ALPN, offering h2
+== Info: ALPN, offering http/1.1
+== Info: successfully set certificate verify locations:
+== Info:  CAfile: C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+== Info:  CApath: none
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.3 (OUT), TLS handshake, Client hello (1):
+=> Send SSL data, 512 bytes (0x200)
+0000: ........~3(...R...v.......].[Q.......a .A.....=..W..". ....c.h..
+0040: {...f...>.......,.0.........+./...$.(.k.#.'.g.....9.....3.....=.
+0080: <.5./.....u.........raw.githubusercontent.com...................
+00c0: .....3t.........h2.http/1.1.........1.....0.....................
+0100: ............................+............-.....3.&.$... .`T;.. .
+0140: ....$.?...i).M..0I^w...e........................................
+0180: ................................................................
+01c0: ................................................................
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....z
+== Info: TLSv1.3 (IN), TLS handshake, Server hello (2):
+<= Recv SSL data, 122 bytes (0x7a)
+0000: ...v......P..$./.._.."...,Z?y.....B. .A.....=..W..". ....c.h..
+0040: {...f........+.....3.$... .n...p...Z..........a@N....b.l|w
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....$
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+<= Recv SSL data, 19 bytes (0x13)
+0000: .................h2
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, Certificate (11):
+<= Recv SSL data, 3050 bytes (0xbea)
+0000: ...........0...0...........Mr.|....Zg..;..0...*.H........0O1.0..
+0040: .U....US1.0...U....DigiCert Inc1)0'..U... DigiCert TLS RSA SHA25
+0080: 6 2020 CA10...230221000000Z..240320235959Z0g1.0...U....US1.0...U
+00c0: ....California1.0...U....San Francisco1.0...U....GitHub, Inc.1.0
+0100: ...U....*.github.io0.."0...*.H.............0..........`../...Kd.
+0140: ...y.......I........T.xC.{NE[.$)..#....lpIvS..#e.H{......y..z^.
+0180: ...J.9....W....v[R.....n/...KjR.4... 3...zw...&A.aG...V?v.8..p.r
+01c0: zC.~'.^.....0p.*.'z{.@.Ww.#.'B:..j...-.?...bW...P.C..v.....V.tP.
+0200: ...,......g.N..Z8...CZ.<W.HzP..8...,,..9.6....VAf.$..........0..
+0240: .0...U.#..0....k......y........v..0...U.........uZ...Axi(.....;.
+0280: .0{..U...t0r..*.github.io..github.io..*.github.com..github.com..
+02c0: www.github.com..*.githubusercontent.com..githubusercontent.com0.
+0300: ..U...........0...U.%..0...+.........+.......0....U.....0..0@.>.
+0340: <.:http://crl3.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl0@.
+0380: >.<.:http://crl4.digicert.com/DigiCertTLSRSASHA2562020CA1-4.crl0
+03c0: >..U. .70503..g.....0)0'..+.........http://www.digicert.com/CPS0
+0400: ..+........s0q0$..+.....0...http://ocsp.digicert.com0I..+.....0
+0440: ..=http://cacerts.digicert.com/DigiCertTLSRSASHA2562020CA1-1.crt
+0480: 0...U....0.0..~..+.....y......n...j.h.w.v..?....Q.a....4....).hB
+04c0: ...gLZ:t....t.u{.....H0F.!..~g.;.1y.Y..s..A..jy..9@U.$.:~7{.!...
+0500: Kn..e%..b.....<...._.S.....\p..v.s....L.x. }G......Q^q.*.k..z.wr
+0540: .....t.uj.....G0E.!...~].@4..0.....,...0.......tu.[r. ]...V..m..
+0580: .J{5..).......7.5.$#.+.u.H..k..G4..j...0..R..V.,.....9..s....t.u
+05c0: J.....F0D. ...6.a.H.j....>...F=.uh#..jEI.0.. ?....F.e..... .....
+0600: .]..;.NON....0...*.H.............7..."....g.........n..e..yP.v.0
+0640: ....y...Z...L.q.."...."...,.qlU...Ce....7L......{.]...P....L..jr
+0680: Y.C....^..?ZCd....v......h.w.L.KMg..r.k..HS..v.\...L$SWW.B.=...
+06c0: ..j.)r.>.../.....5...3..$....#.@..\..........:^.NwO...~..(O.yO..
+0700: .`.nk. l8......C..Q..2"MdL.u'........0...0...............XCF../
+0740: .T"~.0...*.H........0a1.0...U....US1.0...U....DigiCert Inc1.0...
+0780: U....www.digicert.com1 0...U....DigiCert Global Root CA0...21041
+07c0: 4000000Z..310413235959Z0O1.0...U....US1.0...U....DigiCert Inc1)0
+0800: '..U... DigiCert TLS RSA SHA256 2020 CA10.."0...*.H.............
+0840: 0.........K.eGp..OX.....f..1.T.JfF.,..d....... ........z.....V..
+0880: .X.Q.,4.....V..y_....%.{.RAf.`OW.I..7g....KgL"Q......WQt&.}..b..
+08c0: .#.%So.4X.......XI"{........|..Q....7.6..Kb.I...g..>....^D..qB}
+0900: X.........2...'.'.+t......d...S.V.x..I.)..IO.....\.Wmky.+.' ...=
+0940: @.!0..............0..~0...U.......0.......0...U.......k......y..
+0980: ......v..0...U.#..0.....P5V.L.f........=.U0...U...........0...U.
+09c0: %..0...+.........+.......0v..+........j0h0$..+.....0...http://oc
+0a00: sp.digicert.com0@..+.....0..4http://cacerts.digicert.com/DigiCer
+0a40: tGlobalRootCA.crt0B..U...;0907.5.3.1http://crl3.digicert.com/Dig
+0a80: iCertGlobalRootCA.crl0=..U. .6040...`.H...l..0...g....0...g.....
+0ac0: 0...g.....0...g.....0...*.H..............2.^..nZ
+0af2: .........p..]...+u@.....1x.pK..X....k..~...X.Y....l...m.q.[.m.Z.
+0b32: .{..C.*...A&_........o...t... ..O..g]].<..i.al....6....v.K.u....
+0b72: U}&..w.>..|..{z.6o....q...s0.{..*Y.B.;...R....}.[rg.q.WGf...Je4^
+0bb2: ..*< .Q.L.R..k.+..~....6.C..*c.u?......<.0...L..6.s>....
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, CERT verify (15):
+<= Recv SSL data, 264 bytes (0x108)
+0000: ............n..j.M...dGUz..{R.....A....^0.V.N..T[.iE..q.&.\....B
+0040: k\.tp...h...65wws!.........T...C......OUy,.....W.2..e<q.*.LG...W
+0080: ...@.l.....*..v~..)..@.......P`l..~..r..2..........$...e..t....
+00c0: &.*o.:..D.9..R..g%H..y...t.S.g.\bb..z0{...{..r...*n....g.....r..
+0100: .g......
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....E
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, Finished (20):
+<= Recv SSL data, 52 bytes (0x34)
+0000: ...0R..gr....cj....n......a......}.....V..:.W....._.
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: ....E
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (OUT), TLS handshake, Finished (20):
+=> Send SSL data, 52 bytes (0x34)
+0000: ...0.,..n.4.t...Wfa.s.K........fK.8.V.( .$.....y...
+== Info: SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+== Info: ALPN, server accepted to use h2
+== Info: Server certificate:
+== Info:  subject: C=US; ST=California; L=San Francisco; O=GitHub, Inc.; CN=*.github.io
+== Info:  start date: Feb 21 00:00:00 2023 GMT
+== Info:  expire date: Mar 20 23:59:59 2024 GMT
+== Info:  subjectAltName: host "raw.githubusercontent.com" matched cert's "*.githubusercontent.com"
+== Info:  issuer: C=US; O=DigiCert Inc; CN=DigiCert TLS RSA SHA256 2020 CA1
+== Info:  SSL certificate verify ok.
+== Info: Using HTTP2, server supports multi-use
+== Info: Connection state changed (HTTP/2 confirmed)
+== Info: Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+=> Send SSL data, 5 bytes (0x5)
+0000: ....)
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: ....,
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+== Info: Using Stream ID: 1 (easy handle 0x20ece3e1e30)
+=> Send SSL data, 5 bytes (0x5)
+0000: ....f
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send header, 138 bytes (0x8a)
+0000: GET /thewhitesoft/student-2023-assignment/main/README.md HTTP/2
+0041: Host: raw.githubusercontent.com
+0062: user-agent: curl/7.75.0
+007b: accept: */*
+0088: 
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+<= Recv SSL data, 209 bytes (0xd1)
+0000: .........i......k&C....#_.l...9...8.v.....?.yBw..0......\.>.4..
+0040: w.c..7\..x..-...b.O.$.-..rw.{...CA....._..,36.!.+.E....I.H]xP..
+0080: .xY.l.._....8;1.~...Gfue..d.u;.b..f72....D..w...s/..9.a#.^W..uz
+00c0: ......".).R.p....
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....-
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: Connection state changed (MAX_CONCURRENT_STREAMS == 100)!
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv header, 13 bytes (0xd)
+0000: HTTP/2 200 
+<= Recv header, 28 bytes (0x1c)
+0000: cache-control: max-age=300
+<= Recv header, 81 bytes (0x51)
+0000: content-security-policy: default-src 'none'; style-src 'unsafe-i
+0040: nline'; sandbox
+<= Recv header, 41 bytes (0x29)
+0000: content-type: text/plain; charset=utf-8
+<= Recv header, 74 bytes (0x4a)
+0000: etag: "b60f3294f4d5981804e819909b53566780d3e6a79dec500f442c40771
+0040: 32e6e8c"
+<= Recv header, 45 bytes (0x2d)
+0000: strict-transport-security: max-age=31536000
+<= Recv header, 33 bytes (0x21)
+0000: x-content-type-options: nosniff
+<= Recv header, 23 bytes (0x17)
+0000: x-frame-options: deny
+<= Recv header, 33 bytes (0x21)
+0000: x-xss-protection: 1; mode=block
+<= Recv header, 57 bytes (0x39)
+0000: x-github-request-id: 1684:4F7F:134DF79:1432027:652297D8
+<= Recv header, 22 bytes (0x16)
+0000: accept-ranges: bytes
+<= Recv header, 37 bytes (0x25)
+0000: date: Sun, 08 Oct 2023 12:10:23 GMT
+<= Recv header, 18 bytes (0x12)
+0000: via: 1.1 varnish
+<= Recv header, 40 bytes (0x28)
+0000: x-served-by: cache-fra-eddf8230131-FRA
+<= Recv header, 14 bytes (0xe)
+0000: x-cache: HIT
+<= Recv header, 17 bytes (0x11)
+0000: x-cache-hits: 1
+<= Recv header, 39 bytes (0x27)
+0000: x-timer: S1696767023.958505,VS0,VE154
+<= Recv header, 44 bytes (0x2c)
+0000: vary: Authorization,Accept-Encoding,Origin
+<= Recv header, 32 bytes (0x20)
+0000: access-control-allow-origin: *
+<= Recv header, 44 bytes (0x2c)
+0000: cross-origin-resource-policy: cross-origin
+<= Recv header, 63 bytes (0x3f)
+0000: x-fastly-request-id: 701c97bd7c5376e2987175fa32f26f5773cd5b2a
+<= Recv header, 40 bytes (0x28)
+0000: expires: Sun, 08 Oct 2023 12:15:23 GMT
+<= Recv header, 15 bytes (0xf)
+0000: source-age: 0
+<= Recv header, 22 bytes (0x16)
+0000: content-length: 2917
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 720 bytes (0x2d0)
+0000: ## ................. .......... .............. ................ 
+0040: .................. ........! ............................ ......
+0080: .... .................... .. .................. ................
+00c0: .. ..........................! .. .............., ..............
+0100: .... ............ ...................., .......... .............
+0140: ..... ........ ....................... .... ....................
+0180:  ...... .......... ..................! ........ ............ ...
+01c0: ............. .................... ...................., .......
+0200: ....... ...................... ................ ................
+0240: ... .................. .......... ............ ................,
+0280:  ...... .................... .............. .......... .........
+02c0: ......... ......
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv data, 1278 bytes (0x4fe)
+0000: ...... .... ................................!.## .............. 
+0040: ........................... .................. ..........: <br/>
+0080: .... `replacement.json.` ............ .. .......................
+00c0: ... ........................... ................ ...............
+0100: ... ..................:.```JSON.[.        {.            ...repla
+0140: cement...: string.            ...source...: string.        }.   
+0180:      ....].```.... `data.json`. .................. .............
+01c0: .............. ................ ............ ........... *data.j
+0200: son* ............ ........ .............. .. ...................
+0240: . [API](https://raw.githubusercontent.com/thewhitesoft/student-2
+0280: 023-assignment/main/data.json) .. ............................ H
+02c0: TTP GET ..............:..**.............. ..........**:.> ...  *
+0300: replacement.json* .......... .................. ................
+0340: ........ ............... *..........................* ..........
+0380: .......... .............., .................... ................
+03c0: .... `replacement` .. `source`..> ... `replacement` .......... .
+0400: ..................... ............ 1 ......... .. ........ .....
+0440: ....... .......... ........................ .................. .
+0480: ......................... ................ `source`..> ... `sour
+04c0: ce` .......... ........ `null`, .. ........ ............ .....
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+<= Recv data, 919 bytes (0x397)
+0000: ............. .................... .... ........ .. ...... .....
+0040: ..... .............. .... *data.json*.## ................ ......
+0080: ........................... ........................ .......... 
+00c0: ........ *result.json*, .............. ................ ........
+0100: ................ ................... ............ ..............
+0140: .... ............ ............---.## ........ ..................
+0180: ................. .... .......... .......... ...................
+01c0: ............. ................ .. [Telegram](https://t.me/progre
+0200: ss_icu). .............. ............ .................. ........
+0240: ............ ...... ..............<br/>..................... .. 
+0280: Git ([Git](https://github.com/), [GitLab](https://about.gitlab.c
+02c0: om/), [Bitbucket](https://bitbucket.org/dashboard/overview)) ...
+0300: ....... ..............## ...... ....................... .. .....
+0340: ... ............, ................ [............](https://forms.
+0380: gle/YrYnA8o2gaaHNN6p7).
+== Info: Connection #0 to host raw.githubusercontent.com left intact
