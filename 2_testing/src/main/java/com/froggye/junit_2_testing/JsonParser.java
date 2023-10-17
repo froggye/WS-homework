@@ -21,6 +21,7 @@ import javax.net.ssl.HttpsURLConnection;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -32,17 +33,19 @@ public class JsonParser {
     // 3. Запись json файла
     
     private final ObjectMapper objectMapper;
+    private final GetString getString;
     
     public JsonParser() {
         objectMapper = new ObjectMapper();
+        getString = new GetString();
     }
     
     // прочитать из url
     // возвращает список элементов типа или класса itemType
-    public <T> ArrayList<T> readURL(final String url, Class<T> itemType) 
+    public <T> List<T> readURL(final String url, Class<T> itemType) 
             throws IOException {   
         if (!isUrlValid(url)){
-            return null;
+            throw new MalformedURLException(url + " is not valid URL");
         }
         
         URL urlObj = new URL(url);
@@ -55,20 +58,15 @@ public class JsonParser {
         }
         // успешно получили файл
             
-        // прочитать как строку и переделать в список нужного типа              
-        StringBuilder sb = new StringBuilder();
-        Scanner scanner = new Scanner(connection.getInputStream());
-        while (scanner.hasNext()) {
-            sb.append(scanner.nextLine());
-        }            
-        scanner.close();
+        // прочитать как строку и переделать в список нужного типа    
+        String urlContent = getString.getFromURLConnection(connection);
           
         try {
-            if(sb.length() > 0){
+            if(urlContent.length() > 0){
                 TypeFactory t = TypeFactory.defaultInstance(); // нужен, чтобы правильно составить ArrayList из элементов itemType
                 
                 return objectMapper.readValue(
-                        String.valueOf(sb),
+                        urlContent,
                         t.constructCollectionType(ArrayList.class,itemType));
             } else {
                 // пустой файл
@@ -93,14 +91,14 @@ public class JsonParser {
     
     // прочитать из файла
     // возвращает список элементов типа или класса itemClass
-    public <T> ArrayList<T> readLocal(final String path, Class<T> itemType) 
+    public <T> List<T> readLocal(final String path, Class<T> itemType) 
             throws IOException {   
         try {
-            JsonParser instance = new JsonParser();
-            InputStream is = instance.getFileAsIOStream(path);
+            String localContent = getString.getFromResource(path);
             TypeFactory t = TypeFactory.defaultInstance();
             
-            return objectMapper.readValue(is,
+            return objectMapper.readValue(
+                    localContent,
                     t.constructCollectionType(ArrayList.class,itemType));
         }
         catch (FileNotFoundException | MismatchedInputException e){
@@ -110,24 +108,11 @@ public class JsonParser {
         
     }
     
-    // получить поток ввода из файла внутри проекта
-    private InputStream getFileAsIOStream(final String fileName) 
-    {
-        InputStream ioStream = this.getClass()
-            .getClassLoader()
-            .getResourceAsStream(fileName);
-        
-        if (ioStream == null) {
-            throw new IllegalArgumentException(fileName + " is not found");
-        }
-        return ioStream;
-    }
-    
     // создать файл json с массивом объектов
-    public <T> boolean writeFile(ArrayList<T> data) {
+    public <T> boolean writeFile(List<T> data, String path) {
         try {
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("result.json"), data);
+            objectMapper.writeValue(new File(path + "result.json"), data);
             return true;
         } catch (IOException e) {
             return false;
